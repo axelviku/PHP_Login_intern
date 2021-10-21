@@ -1,13 +1,22 @@
 <?php  
-require_once 'dbConnect.php';  
+//require_once 'dbConnect.php';  
 session_start();  
     class dbFunction {  
             
+        public $conn;
         function __construct() {  
               
             // connecting to database  
-            $db = new dbConnect();;  
+            //$db = new dbConnect();  
                
+            define('DB_SERVER', 'localhost');
+            define('DB_USERNAME', 'root');
+            define('DB_PASSWORD', '');
+            define('DB_NAME', 'arya');
+           
+           // Try connecting to the Database
+           $this->conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+         
         }  
         // destructor  
         function __destruct() {  
@@ -15,15 +24,15 @@ session_start();
         }  
         public function UserRegister($username, $emailid, $password){  
                 $password = md5($password);  
-                $qr = mysql_query("INSERT INTO users(username, emailid, password) values('".$username."','".$emailid."','".$password."')") or die(mysql_error());  
+                $qr = mysqli_query($this->conn,"INSERT INTO users(username, emailid, password) values('".$username."','".$emailid."','".$password."')") or die(mysql_error());  
                 return $qr;  
                
         }  
         public function Login($emailid, $password){  
-            $res = mysql_query("SELECT * FROM users WHERE emailid = '".$emailid."' AND password = '".md5($password)."'");  
-            $user_data = mysql_fetch_array($res);  
+            $res = mysqli_query($this->conn,"SELECT * FROM users WHERE emailid = '".$emailid."' AND password = '".md5($password)."'");  
+            $user_data = mysqli_fetch_array($res);  
             //print_r($user_data);  
-            $no_rows = mysql_num_rows($res);  
+            $no_rows = mysqli_num_rows($res);  
               
             if ($no_rows == 1)   
             {  
@@ -40,8 +49,11 @@ session_start();
             }  
         }  
         public function isUserExist($emailid){  
-            $qr = mysql_query("SELECT * FROM users WHERE emailid = '".$emailid."'");  
-            echo $row = mysql_num_rows($qr);  
+
+           
+            $qr = mysqli_query($this->conn,"SELECT * FROM users WHERE emailid = '".$emailid."'");  
+            $row = mysqli_num_rows($qr);  
+            
             if($row > 0){  
                 return true;  
             } else {  
