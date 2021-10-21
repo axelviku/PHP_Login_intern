@@ -1,19 +1,7 @@
 <?php  
     include_once('dbFunction.php');  
-       $reg_success=$reg_not_success=$email_exit=$pass_match= ''; 
-    $funObj = new dbFunction();  
-    if(!empty($_POST['login'])){  
-        $emailid = $_POST['emailid'];  
-        $password = $_POST['password'];  
-        $user = $funObj->Login($emailid, $password);  
-        if ($user) {  
-            // Registration Success  
-           header("location:home.php");  
-        } else {  
-            // Registration Failed  
-            echo "<script>alert('Emailid / Password Not Match')</script>";  
-        }  
-    }  
+       $reg_success=$reg_not_success=$email_exist=$pass_match= ''; 
+     $funObj = new dbFunction();   
     if(!empty($_POST['register'])){  
         $username = $_POST['username'];  
         $emailid = $_POST['emailid'];  
@@ -26,14 +14,13 @@
                 if($register){  
                     $reg_success = "Registration Successfully done!!!"; 
                 }else{  
-                    echo "<script>alert('Registration Not Successful')</script>";  
+                    $reg_not_success = "Registration Not Successful!!!"; 
                 }  
             } else {  
-                echo "<script>alert('Email Already Exist')</script>";  
+                $email_exist = "Email Already Exist!!!";  
             }  
         } else {  
-            echo "<script>alert('Password Not Match')</script>";  
-          
+            $pass_match = "Password Not Match!!!";          
         }  
     }  
 ?>  
@@ -46,6 +33,35 @@
   </button>
 </div>';
  }
+?>
+<?php
+ if($reg_not_success){
+  echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>Error!</strong> ' . $reg_not_success . '
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+  </button>
+</div>';
+ }
+
+ if($email_exist){
+    echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>Error!</strong> ' . $email_exist . '
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+  </div>';
+   }
+
+   if($pass_match){
+    echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>Error!</strong> ' . $pass_match . '
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+  </div>';
+   }
+
 ?>
 
 <!DOCTYPE html>  
@@ -66,56 +82,32 @@
     <body>  
         <div class="container">  
             <header>  
-                <h1>Login and Registration Form  </h1>  
+                <h1 class="text-center">Login and Registration Form  </h1>  
+                <hr>
             </header>  
             <section>               
                 <div id="container_demo" >  
                      
-                    <a class="hiddenanchor" id="toregister"></a>  
-                    <a class="hiddenanchor" id="tologin"></a>  
-                    <div id="wrapper">  
-                        <div id="login" class="animate form">  
-                           <form name="login" method="post" action="">  
-                                <h1>Log in</h1>   
-                                <div class="form-group">   
-                                    <label for="emailsignup" class="youmail" data-icon="e" > Your email</label>  
-                                    <input class="form-control" id="emailsignup" name="emailid" required="required" type="email" placeholder="mysupermail@mail.com"/>   
-                                </div>  
-                                <div class="form-group">   
-                                    <label for="password" class="youpasswd" data-icon="p"> Your password </label>  
-                                    <input class="form-control" id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" />   
-                                </div>  
-                                <!-- <p class="keeplogin">   
-                                    <input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" />   
-                                    <label for="loginkeeping">Keep me logged in</label>  
-                                </p>   -->
-                                <p class="login button">   
-                                    <input type="submit" name="login" value="Login" />   
-                                </p>  
-                                <p class="change_link">  
-                                    Not a member yet ?  
-                                    <a href="#toregister" class="to_register">Join us</a>  
-                                </p>  
-                            </form>  
-                        </div>  
-  
-                        <div id="register" class="animate form">  
+                   <!-- <a class="hiddenanchor" id="toregister"></a>  
+                    <a class="hiddenanchor" id="tologin"></a>   -->
+                    <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto form p-4">  
+                        <div id="register">  
                             <form name="login" method="post" action="">  
                                 <h1> Sign up </h1>   
                                 <div class="form-group">   
-                                    <label for="usernamesignup" class="uname" data-icon="u">Your username</label>  
+                                    <label for="usernamesignup" data-icon="u">Your username</label>  
                                     <input class="form-control" id="usernamesignup" name="username" required="required" type="text" placeholder="mysuperusername690" />  
                                 </div>  
                                 <div class="form-group">   
-                                    <label for="emailsignup" class="youmail" data-icon="e" > Your email</label>  
+                                    <label for="emailsignup" data-icon="e" > Your email</label>  
                                     <input class="form-control" id="emailsignup" name="emailid" required="required" type="email" placeholder="mysupermail@mail.com"/>   
                                 </div>  
                                 <div class="form-group">   
-                                    <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>  
+                                    <label for="passwordsignup" data-icon="p">Your password </label>  
                                     <input class="form-control" id="passwordsignup" name="password" required="required" type="password" placeholder="eg. X8df!90EO"/>  
                                 </div>  
                                 <div class="form-group">   
-                                    <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>  
+                                    <label for="passwordsignup_confirm"  data-icon="p">Please confirm your password </label>  
                                     <input class="form-control" id="passwordsignup_confirm" name="confirm_password" required="required" type="password" placeholder="eg. X8df!90EO"/>  
                                 </div>  
                                 <div class="form-group">   
@@ -123,7 +115,7 @@
                                 </div>  
                                 <p class="change_link">    
                                     Already a member ?  
-                                    <a href="#tologin" class="to_register"> Go and log in </a>  
+                                    <a href="login.php" class="to_register"> Go and log in </a>  
                                 </p>  
                             </form>  
                         </div>  
