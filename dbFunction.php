@@ -17,7 +17,7 @@ session_start();
            // Try connecting to the Database
            $this->conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
          
-        } 
+        }  
         // destructor  
         function __destruct() {  
               
@@ -28,10 +28,21 @@ session_start();
                 return $qr;  
                
         }  
+        public function validating($phonenum){
+                    $valid_number = filter_var($phonenum, FILTER_SANITIZE_NUMBER_INT);
+                    $valid_number = str_replace("-", "", $valid_number);
+                    if (strlen($valid_number) < 10 || strlen($valid_number) >= 12) 
+                    {
+                      return false;
+                    } else 
+                    {
+                      return true;
+                    }
+            }
+
         public function Login($emailid, $password){  
             $res = mysqli_query($this->conn,"SELECT * FROM users WHERE emailid = '".$emailid."' AND password = '".md5($password)."'");  
             $user_data = mysqli_fetch_array($res);  
-            //print_r($user_data);  
             $no_rows = mysqli_num_rows($res);  
               
             if ($no_rows == 1)   

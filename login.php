@@ -1,4 +1,5 @@
 <?php
+$reg_failed = '';
  include_once('dbFunction.php');
 $funObj = new dbFunction();  
 if(!empty($_POST['login'])){  
@@ -10,9 +11,19 @@ if(!empty($_POST['login'])){
        header("location:home.php");  
     } else {  
         // Registration Failed  
-        echo "<script>alert('Emailid / Password Not Match')</script>";  
+        $reg_failed = "Your EmailId / Password Not Match!!!";
     }  
 }
+?>
+<?php
+if($reg_failed){
+    echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>Error!</strong> ' . $reg_failed . '
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+  </div>';
+   }
 ?>
 <!doctype html>
 <html lang="en">
@@ -39,10 +50,8 @@ if(!empty($_POST['login'])){
                                     <label for="password" data-icon="p"> Your password </label>  
                                     <input class="form-control" id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" />   
                                 </div>  
-                                <p class="login button">   
-                                    <input type="submit" name="login" value="Login" />   
-                                </p>  
-                                <p class="change_link">  
+                                <button type="submit" name="login" value="Login" class="btn btn-outline-primary">Login</button>  
+                                <p>  
                                     Not a member yet ?  
                                     <a href="index.php" class="to_register">Join us</a>  
                                 </p>  
