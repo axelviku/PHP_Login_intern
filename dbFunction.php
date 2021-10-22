@@ -17,7 +17,7 @@ session_start();
            // Try connecting to the Database
            $this->conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
          
-        }  
+        } 
         // destructor  
         function __destruct() {  
               
