@@ -19,9 +19,7 @@ session_start();
          
         }  
         // destructor  
-        function __destruct() {  
-              
-        }  
+         
         public function UserRegister($username, $emailid, $password){  
                 $password = md5($password);  
                 $qr = mysqli_query($this->conn,"INSERT INTO users(username, emailid, password) values('".$username."','".$emailid."','".$password."')") or die(mysql_error());  

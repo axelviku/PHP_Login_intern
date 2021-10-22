@@ -34,9 +34,13 @@
                                 <div class="alert alert-success" role="alert">
                                 <h4 class="alert-heading">Your Name - <?=$_SESSION['username']?> </h4>
                                 <h5 class="alert-heading">Your Email - <?=$_SESSION['email']?> </h5>
-                                <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+                                <p> 
+                                    Author:- Vikrant kumar
+                                    Created:- 20th october 2021
+                                </p>
                                 <hr>
-                                <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+                                <p class="mb-0">This Login form is made for learning Perpose</p>
+                                <a href="https://github.com/axelviku/PHP_Login_intern/tree/master">Source code</a>
                                 </div>  
                                 <button type="submit" name="welcome" value="Logout" class="btn btn-outline-success">Logout</button>      
                             </form>  
