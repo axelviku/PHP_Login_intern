@@ -5,21 +5,15 @@ session_start();
             
         public $conn;
         function __construct() {  
-              
-            // connecting to database  
-            //$db = new dbConnect();  
-               
-            define('DB_SERVER', 'localhost');
-            define('DB_USERNAME', 'root');
-            define('DB_PASSWORD', '');
-            define('DB_NAME', 'arya');
+            //$db = new dbConnect(); 
+            //That include the db part  
+            include 'config.php';
            
            // Try connecting to the Database
            $this->conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
          
         }  
-        // destructor  
-         
+              
         public function UserRegister($username, $emailid, $password){  
                 $password = md5($password);  
                 $qr = mysqli_query($this->conn,"INSERT INTO users(username, emailid, password) values('".$username."','".$emailid."','".$password."')") or die(mysql_error());  
