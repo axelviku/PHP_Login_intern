@@ -35,7 +35,7 @@ if($reg_failed){
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>Login!</title>
+    <title>Login Form!</title>
   </head>
   <body>
                         <div id="login" class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto form p-4">  

@@ -15,7 +15,7 @@
  <html lang="en" class="no-js">  
  <head>  
         <meta charset="UTF-8" />  
-        <title>Login and Registration Form. </title>  
+        <title>Home!</title>  
         <meta name="viewport" content="width=device-width, initial-scale=1.0">   
         <meta name="description" content="Login and Registration Form" />  
         <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />  
@@ -35,11 +35,14 @@
                                 <h4 class="alert-heading">Your Name - <?=$_SESSION['username']?> </h4>
                                 <h5 class="alert-heading">Your Email - <?=$_SESSION['email']?> </h5>
                                 <p> 
-                                    Author:- Vikrant kumar
-                                    Created:- 20th october 2021
+                                    Author:- Vikrant kumar <br>
+                                    Created:- 20th october 2021 <br>
+                                    Technology Used:- PHP, Bootstrap,HTML,CSS Mysql.
                                 </p>
                                 <hr>
-                                <p class="mb-0">This Login form is made for learning Perpose</p>
+                                <p class="mb-0">This Login form is made for learning Purpose. <br>
+                                    The source code is available on my github account link is below.
+                                </p>
                                 <a href="https://github.com/axelviku/PHP_Login_intern/tree/master">Source code</a>
                                 </div>  
                                 <button type="submit" name="welcome" value="Logout" class="btn btn-outline-success">Logout</button>      

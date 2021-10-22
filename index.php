@@ -1,6 +1,6 @@
 <?php  
     include_once('dbFunction.php');  
-       $reg_success=$reg_not_success=$email_exist=$pass_match= ''; 
+       $reg_success=$reg_not_success=$email_exist=$pass_match= $valid_phn_num= ''; 
      $funObj = new dbFunction();   
     if(!empty($_POST['register'])){  
         $username = $_POST['username']; 
@@ -20,7 +20,8 @@
                     $reg_not_success = "Registration Not Successful!!!"; 
                 }  
              }else{
-                 echo "Enter Valid Phone Number";
+                 $valid_phn_num = "Enter Valid Phone Num!!!";
+                 //echo "Enter Valid Phone Number";
              }
             } else {  
                 $email_exist = "Email Already Exist!!!";  
@@ -68,13 +69,22 @@
   </div>';
    }
 
+   if($valid_phn_num){
+    echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>Error!</strong> ' . $valid_phn_num . '
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+  </div>';
+   }
+
 ?>
 
 <!DOCTYPE html>  
  <html lang="en" class="no-js">  
  <head>  
         <meta charset="UTF-8" />  
-        <title>Login and Registration Form</title>  
+        <title>Registration Form</title>  
         <meta name="viewport" content="width=device-width, initial-scale=1.0">   
         <meta name="description" content="Login and Registration Form with HTML5 and CSS3" />  
         <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />  
