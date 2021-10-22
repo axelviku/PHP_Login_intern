@@ -1,7 +1,8 @@
 # PHP_Login_intern
-1st page index.php
-2nd page login.php
-3rd page home.php
+1st page index.php,
+2nd page login.php,
+3rd page home.php,
+4th page alert.php //it show all the alert on the registration page. ,,
 4th is dbFunction to call in all above work.
 
 Database creation use this code
