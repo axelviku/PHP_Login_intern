@@ -40,10 +40,9 @@
                                 </div>
 
                                    
-                                <p class="login button">   
-                                    <input type="submit" name="welcome" value="Logout" />   
-                                </p>  
-                                   
+                                <button type="submit" name="welcome" value="Logout" class="btn btn-outline-success">   
+                                    Logout
+                                </button>       
                             </form>  
                         </div>  
                     </div>  

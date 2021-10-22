@@ -1,6 +1,6 @@
 <?php  
     include_once('dbFunction.php');  
-       $reg_success=$reg_not_success=$email_exist=$pass_match= ''; 
+    $reg_success=$reg_not_success=$email_exist=$pass_match= ''; 
      $funObj = new dbFunction();   
     if(!empty($_POST['register'])){  
         $username = $_POST['username'];  
@@ -75,22 +75,14 @@
         <meta name="author" content="Codrops" />  
         <link rel="shortcut icon" href="../favicon.ico">   
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <!-- <link rel="stylesheet" type="text/css" href="css/demo.css" />  
-        <link rel="stylesheet" type="text/css" href="css/style2.css" />  
-        <link rel="stylesheet" type="text/css" href="css/animate-custom.css" />   -->
-    </head>  
+  </head>  
     <body>  
-        <div class="container">  
-            <header>  
-                <h1 class="text-center">Login and Registration Form  </h1>  
-                <hr>
-            </header>  
+        <div class="container">    
             <section>               
                 <div id="container_demo" >  
-                     
-                   <!-- <a class="hiddenanchor" id="toregister"></a>  
-                    <a class="hiddenanchor" id="tologin"></a>   -->
                     <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto form p-4">  
+                    <h1 class="text-center">Login and Registration Form  </h1>  
+                     <hr>
                         <div id="register">  
                             <form name="login" method="post" action="">  
                                 <h1> Sign up </h1>   
@@ -110,9 +102,9 @@
                                     <label for="passwordsignup_confirm"  data-icon="p">Please confirm your password </label>  
                                     <input class="form-control" id="passwordsignup_confirm" name="confirm_password" required="required" type="password" placeholder="eg. X8df!90EO"/>  
                                 </div>  
-                                <div class="form-group">   
-                                    <input type="submit" name="register" value="Sign up"/>   
-                                </div>  
+                                <button type="submit" name="register" value="Sign up" class="btn btn-outline-primary">   
+                                    SignUp
+                                </button>  
                                 <p class="change_link">    
                                     Already a member ?  
                                     <a href="login.php" class="to_register"> Go and log in </a>  
