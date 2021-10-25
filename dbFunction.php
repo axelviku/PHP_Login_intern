@@ -27,6 +27,8 @@ session_start();
                       return false;
                     } else 
                     {
+                      //$this->UserRegister = mysqli_query($this->conn,"INSERT INTO users(number) values('".$phonenum."')") or die(mysql_error());
+                      //return $this->UserRegister;
                       return true;
                     }
             }
