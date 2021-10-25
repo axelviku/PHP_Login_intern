@@ -13,23 +13,22 @@ session_start();
          
         }  
               
-        public function UserRegister($username, $emailid, $password){  
+        public function UserRegister($username, $emailid, $password, $phonenum){  
                 $password = md5($password);  
-                $qr = mysqli_query($this->conn,"INSERT INTO users(username, emailid, password) values('".$username."','".$emailid."','".$password."')") or die(mysql_error());  
+                $qr = mysqli_query($this->conn,"INSERT INTO users(username, emailid, password, number) values('".$username."','".$emailid."','".$password."','".$phonenum."')") or die(mysql_error());  
                 return $qr;  
                
         }  
         public function validating($phonenum){
                     $valid_number = filter_var($phonenum, FILTER_SANITIZE_NUMBER_INT);
                     $valid_number = str_replace("-", "", $valid_number);
+                    $valid_number = str_replace("+", "", $valid_number);
                     if (strlen($valid_number) < 10 || strlen($valid_number) >= 12) 
                     {
                       return false;
                     } else 
                     {
-                      //$this->UserRegister = mysqli_query($this->conn,"INSERT INTO users(number) values('".$phonenum."')") or die(mysql_error());
-                      //return $this->UserRegister;
-                      return true;
+                     return true;
                     }
             }
 
@@ -53,11 +52,8 @@ session_start();
             }  
         }  
         public function isUserExist($emailid){  
-
-           
             $qr = mysqli_query($this->conn,"SELECT * FROM users WHERE emailid = '".$emailid."'");  
             $row = mysqli_num_rows($qr);  
-            
             if($row > 0){  
                 return true;  
             } else {  
