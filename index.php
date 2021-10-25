@@ -39,10 +39,6 @@
         <meta charset="UTF-8" />  
         <title>Registration Form</title>  
         <meta name="viewport" content="width=device-width, initial-scale=1.0">   
-        <meta name="description" content="Login and Registration Form with HTML5 and CSS3" />  
-        <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />  
-        <meta name="author" content="Codrops" />  
-        <link rel="shortcut icon" href="../favicon.ico">   
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     </head>  

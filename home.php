@@ -17,10 +17,6 @@
         <meta charset="UTF-8" />  
         <title>Home!</title>  
         <meta name="viewport" content="width=device-width, initial-scale=1.0">   
-        <meta name="description" content="Login and Registration Form" />  
-        <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />  
-        <meta name="author" content="Codrops" />  
-        <link rel="shortcut icon" href="../favicon.ico">  
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
     </head>  
     <body>  

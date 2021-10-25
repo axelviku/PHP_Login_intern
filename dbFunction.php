@@ -7,8 +7,7 @@ session_start();
         function __construct() {  
             //$db = new dbConnect(); 
             //That include the db part  
-            include 'config.php';
-           
+            include 'config.php';    
            // Try connecting to the Database
            $this->conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
          
