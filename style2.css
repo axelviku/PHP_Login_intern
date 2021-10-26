@@ -1,0 +1,12 @@
+/* change the background of login page */
+.css{
+    background-image: url(img/backing.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 7px 10px rgb(68, 55, 55);
+}
+
+/* login button hover */
+.bttn:hover{
+    transition: all 1s;
+}

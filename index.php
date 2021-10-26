@@ -41,30 +41,31 @@
     <title>Registration Form</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylereg.css">
 
 </head>
 
 <body>
-    <div class="container">
+    <div class="container col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto form p-4 css">
         <header>
-            <h1 class="text-center pt-5">Registration Form </h1>
+            <h1 class="text-center pt-5 ">Registration Form </h1>
         </header>
         <section>
             <div id="container_demo">
-                <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto form p-4">
+                <div class="">
                     <hr>
                     <div id="register">
                         <form name="login" method="post" action="">
                             <div class="form-group">
                                 <label for="usernamesignup" data-icon="u">Your username</label>
                                 <input class="form-control" id="usernamesignup" name="username" required="required"
-                                    type="text" placeholder="mysuperusername690" />
+                                    type="text" placeholder="Viku123" />
                             </div>
                             <div class="form-group">
                                 <label for="emailsignup" data-icon="e"> Your email</label>
                                 <input class="form-control" id="emailsignup" name="emailid" required="required"
-                                    type="email" placeholder="abc@mail.com" />
+                                    type="email" placeholder="Abc@gmail.com" />
                                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.
                                 </div>
                             </div>
@@ -76,14 +77,15 @@
                             <div class="form-group">
                                 <label for="passwordsignup" data-icon="p">Your password </label>
                                 <input class="form-control" id="passwordsignup" name="password" required="required"
-                                    type="password" placeholder="eg. X8df!90EO" />
+                                    type="password" placeholder="eg. Abc@1" />
                             </div>
                             <div class="form-group">
                                 <label for="passwordsignup_confirm" data-icon="p">Please confirm your password </label>
                                 <input class="form-control" id="passwordsignup_confirm" name="confirm_password"
-                                    required="required" type="password" placeholder="eg. X8df!90EO" />
+                                    required="required" type="password" placeholder="eg. Abc@1" />
                             </div>
-                            <button type="submit" name="register" value="Sign up" class="btn btn-outline-primary">Sign
+                            <button type="submit" name="register" value="Sign up"
+                                class="btn btn-outline-primary bttn">Sign
                                 up</button>
                             <p>
                                 Already a member ?
@@ -95,6 +97,9 @@
                 </div>
             </div>
         </section>
+        <footer class="text-center">
+            <small>Copyright © <?php echo date("Y"); ?> Viku. All rights reserved.</small>
+        </footer>
     </div>
 
 

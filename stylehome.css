@@ -1,0 +1,10 @@
+.css{
+    background-image: url(img/home.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 50px;
+    box-shadow: 3px 5px gainsboro; 
+}
+.bttn:hover{
+    transition: all 1s;
+}

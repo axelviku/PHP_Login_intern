@@ -20,19 +20,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="stylehome.css">
 </head>
 
 <body>
-    <div class="container text-center">
+    <div class="container text-center css">
         <section>
             <div id="container_demo">
                 <div id="wrapper">
-                    <div id="login" class="animate form">
+                    <div id="login">
                         <form name="login" method="post" action="">
                             <h1>Welcome </h1>
-                            <div class="alert alert-success" role="alert">
-                                <h4 class="alert-heading">Your Name - <?=$_SESSION['username']?> </h4>
-                                <h5 class="alert-heading">Your Email - <?=$_SESSION['email']?> </h5>
+                            <div>
+                                <h4 >Your Name - <?=$_SESSION['username']?> </h4>
+                                <h5>Your Email - <?=$_SESSION['email']?> </h5>
                                 <p>
                                     Author:- Vikrant kumar <br>
                                     Created:- 20th october 2021 <br>
@@ -45,7 +46,7 @@
                                 <a href="https://github.com/axelviku/PHP_Login_intern/tree/master">Source code</a>
                             </div>
                             <button type="submit" name="welcome" value="Logout"
-                                class="btn btn-outline-success">Logout</button>
+                                class="btn btn-outline-success bttn">Logout</button>
                         </form>
                     </div>
                 </div>

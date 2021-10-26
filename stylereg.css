@@ -1,0 +1,16 @@
+/* change the background of registration page */
+.css{
+    background-image: url(img/back.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 7px 10px grey;
+}
+
+
+.bttn:hover{
+    transition: all 1s;
+}
+footer{
+    background-color: black;
+    color: white;
+}

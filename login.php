@@ -36,26 +36,27 @@ if($reg_failed){
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="style2.css">
 
     <title>Login Form!</title>
 </head>
 
 <body>
-    <div id="login" class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto form p-4">
+    <div id="login" class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto form p-4 css">
         <form name="login" method="post" action="">
             <h1>Log in</h1>
             <hr>
             <div class="form-group">
                 <label for="emailsignup" data-icon="e"> Your email</label>
                 <input class="form-control" id="emailsignup" name="emailid" required="required" type="email"
-                    placeholder="mysupermail@mail.com" />
+                    placeholder="Abc@gmail.com" />
             </div>
             <div class="form-group">
                 <label for="password" data-icon="p"> Your password </label>
                 <input class="form-control" id="password" name="password" required="required" type="password"
-                    placeholder="eg. X8df!90EO" />
+                    placeholder="eg. Abc@1" />
             </div>
-            <button type="submit" name="login" value="Login" class="btn btn-outline-primary">Login</button>
+            <button type="submit" name="login" value="Login" class="btn btn-outline-primary bttn">Login</button>
             <p>
                 Not a member yet ?
                 <a href="index.php" class="to_register">Join us</a>
