@@ -8,3 +8,8 @@
 .bttn:hover{
     transition: all 1s;
 }
+
+small{
+    background-color: black;
+    color: white;
+}

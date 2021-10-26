@@ -62,6 +62,9 @@ if($reg_failed){
                 <a href="index.php" class="to_register">Join us</a>
             </p>
         </form>
+        <footer class="text-center" >
+            <small>Copyright © <?php echo date("Y"); ?> Viku. All rights reserved.</small>
+        </footer>
     </div>
 
     <!-- Optional JavaScript -->

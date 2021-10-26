@@ -31,7 +31,18 @@ session_start();
                      return true;
                     }
             }
-
+        public function pass_Check($password){
+            $uppercase = preg_match('@[A-Z]@', $password);
+            $lowercase = preg_match('@[a-z]@', $password);
+            $number    = preg_match('@[0-9]@', $password);
+            $specialChars = preg_match('@[^\w]@', $password);
+            
+            if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 5) {
+                 return false;
+            }else{
+                return true;
+            }
+        }
         public function Login($emailid, $password){  
             $res = mysqli_query($this->conn,"SELECT * FROM users WHERE emailid = '".$emailid."' AND password = '".md5($password)."'");  
             $user_data = mysqli_fetch_array($res);  

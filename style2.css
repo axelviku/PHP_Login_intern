@@ -10,3 +10,7 @@
 .bttn:hover{
     transition: all 1s;
 }
+.text-center{
+    background-color: black;
+    color: white;
+}

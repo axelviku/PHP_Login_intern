@@ -13,21 +13,26 @@
             if(!$email){
                 $phone = $funObj->validating($phonenum);
                 if($phone){
+                    $passCheck = $funObj->pass_Check($password);
+                    if($passCheck){
                 $register = $funObj->UserRegister($username, $emailid, $password, $phonenum);  
                 if($register){  
                     $reg_success = "Registration Successfully done!!!"; 
                 }else{  
                     $reg_not_success = "Registration Not Successful!!!"; 
-                }  
+                     }
+                } else{
+                    echo "Password contain one special character";
+                } 
              }else{
-                 $valid_phn_num = "Enter Valid Phone Num!!!";
-             }
+                    $valid_phn_num = "Enter Valid Phone Num!!!";
+                  }
             } else {  
-                $email_exist = "Email Already Exist!!!";  
-            }  
+                     $email_exist = "Email Already Exist!!!";  
+                    }  
         } else {  
-            $pass_match = "Password Not Match!!!";          
-        }  
+                $pass_match = "Password Not Match!!!";          
+               }  
     }  
 ?>
 <!-- this include the alert message shown on the registration page  -->
