@@ -32,12 +32,13 @@ session_start();
                     }
             }
         public function pass_Check($password){
+            $passLenght = 5;
             $uppercase = preg_match('@[A-Z]@', $password);
             $lowercase = preg_match('@[a-z]@', $password);
             $number    = preg_match('@[0-9]@', $password);
             $specialChars = preg_match('@[^\w]@', $password);
             
-            if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 5) {
+            if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < $passLenght) {
                  return false;
             }else{
                 return true;

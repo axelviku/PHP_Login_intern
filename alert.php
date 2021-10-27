@@ -9,6 +9,16 @@
  }
 ?>
 <?php
+ if($pass_length){
+  echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>Error!</strong> ' . $pass_length . '
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+  </button>
+</div>';
+ }
+?>
+<?php
  if($reg_not_success){
   echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
   <strong>Error!</strong> ' . $reg_not_success . '
@@ -44,5 +54,4 @@
     </button>
   </div>';
    }
-
 ?>

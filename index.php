@@ -1,6 +1,6 @@
 <?php  
     include_once('dbFunction.php');  
-       $reg_success=$reg_not_success=$email_exist=$pass_match= $valid_phn_num= ''; 
+       $reg_success=$reg_not_success=$email_exist=$pass_match= $valid_phn_num=$pass_length= ''; 
      $funObj = new dbFunction();   
     if(!empty($_POST['register'])){  
         $username = $_POST['username']; 
@@ -22,7 +22,7 @@
                     $reg_not_success = "Registration Not Successful!!!"; 
                      }
                 } else{
-                    echo "Password contain one special character";
+                    $pass_length = "Password contain one special character,one capital letter and not less than 5!!!";
                 } 
              }else{
                     $valid_phn_num = "Enter Valid Phone Num!!!";
