@@ -1,13 +1,16 @@
 <?php  
     include_once('dbFunction.php');  
        $reg_success=$reg_not_success=$email_exist=$pass_match= $valid_phn_num=$pass_length= ''; 
-     $funObj = new dbFunction();   
+     $funObj = new dbFunction(); 
+     $funObj1 = new general();  
     if(!empty($_POST['register'])){  
         $username = $_POST['username']; 
         $phonenum = $_POST['number']; 
         $emailid = $_POST['emailid'];  
         $password = $_POST['password'];  
         $confirmPassword = $_POST['confirm_password'];  
+        $empty = $funObj1->emptyField($username,$emailid, $password, $phonenum);
+        if($empty){
         if($password == $confirmPassword){  
             $email = $funObj->isUserExist($emailid);  
             if(!$email){
@@ -33,7 +36,10 @@
         } else {  
                 $pass_match = "Password Not Match!!!";          
                }  
-    }  
+    } else {
+        echo "Please enter all the fields carefully!!!";
+    }
+}
 ?>
 <!-- this include the alert message shown on the registration page  -->
 <?Php include 'alert.php';?>
@@ -64,30 +70,30 @@
                         <form name="login" method="post" action="">
                             <div class="form-group">
                                 <label for="usernamesignup" data-icon="u">Your username</label>
-                                <input class="form-control" id="usernamesignup" name="username" required="required"
-                                    type="text" placeholder="Viku123" />
+                                <input class="form-control" id="usernamesignup" name="username" 
+                                  type="text" placeholder="Viku123" />
                             </div>
                             <div class="form-group">
                                 <label for="emailsignup" data-icon="e"> Your email</label>
-                                <input class="form-control" id="emailsignup" name="emailid" required="required"
+                                <input class="form-control" id="emailsignup" name="emailid" 
                                     type="email" placeholder="Abc@gmail.com" />
                                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="PhoneNum" data-icon="p">Phone Number</label>
-                                <input class="form-control" id="phonenum" name="number" required="required"
+                                <input class="form-control" id="phonenum" name="number" 
                                     type="number" placeholder="eg.9973462210" />
                             </div>
                             <div class="form-group">
                                 <label for="passwordsignup" data-icon="p">Your password </label>
-                                <input class="form-control" id="passwordsignup" name="password" required="required"
+                                <input class="form-control" id="passwordsignup" name="password" 
                                     type="password" placeholder="eg. Abc@1" />
                             </div>
                             <div class="form-group">
                                 <label for="passwordsignup_confirm" data-icon="p">Please confirm your password </label>
                                 <input class="form-control" id="passwordsignup_confirm" name="confirm_password"
-                                    required="required" type="password" placeholder="eg. Abc@1" />
+                                    type="password" placeholder="eg. Abc@1" />
                             </div>
                             <button type="submit" name="register" value="Sign up"
                                 class="btn btn-outline-primary bttn">Sign
