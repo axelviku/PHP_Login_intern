@@ -1,30 +1,28 @@
 <?php
-$reg_failed = '';
+include_once('messg.php');
  include_once('dbFunction.php');
 $funObj = new dbFunction();  
+$funObj1 = new general();
+$funObj2 = new messages();
 if(!empty($_POST['login'])){  
     $emailid = $_POST['emailid'];  
     $password = $_POST['password'];  
+    $empty = $funObj1->emptyField($username=null,$emailid, $password, $phonenum=null);
+    if($empty){
     $user = $funObj->Login($emailid, $password);  
     if ($user) {  
         // Registration Success  
        header("location:home.php");  
     } else {  
         // Registration Failed  
-        $reg_failed = "Your EmailId / Password Not Match!!!";
-    }  
+        echo $funObj1->error('Your EmailId / Password Not Match!!!');
+    } 
+  } else {
+    echo $funObj2->warning('Please enter all the fields carefully!!!');
+}
 }
 ?>
-<?php
-if($reg_failed){
-    echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-    <strong>Error!</strong> ' . $reg_failed . '
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
-  </div>';
-   }
-?>
+
 <!doctype html>
 <html lang="en">
 
@@ -48,12 +46,12 @@ if($reg_failed){
             <hr>
             <div class="form-group">
                 <label for="emailsignup" data-icon="e"> Your email</label>
-                <input class="form-control" id="emailsignup" name="emailid" required="required" type="email"
+                <input class="form-control" id="emailsignup" name="emailid"  type="email"
                     placeholder="Abc@gmail.com" />
             </div>
             <div class="form-group">
                 <label for="password" data-icon="p"> Your password </label>
-                <input class="form-control" id="password" name="password" required="required" type="password"
+                <input class="form-control" id="password" name="password" type="password"
                     placeholder="eg. Abc@1" />
             </div>
             <button type="submit" name="login" value="Login" class="btn btn-outline-primary bttn">Login</button>
