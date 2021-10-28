@@ -1,11 +1,8 @@
-<?php  
-//require_once 'dbConnect.php';  
+<?php    
 session_start();  
     class dbFunction {  
-            
         public $conn;
         function __construct() {  
-            //$db = new dbConnect(); 
             //That include the db part  
             include 'config.php';    
            // Try connecting to the Database
@@ -51,7 +48,6 @@ session_start();
               
             if ($no_rows == 1)   
             {  
-           
                 $_SESSION['login'] = true;  
                 $_SESSION['uid'] = $user_data['id'];  
                 $_SESSION['username'] = $user_data['username'];  
@@ -84,4 +80,5 @@ session_start();
 
         }
     }
+
 ?>  

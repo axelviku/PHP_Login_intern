@@ -1,8 +1,9 @@
 <?php  
     include_once('dbFunction.php');  
-       $reg_success=$reg_not_success=$email_exist=$pass_match= $valid_phn_num=$pass_length= ''; 
+     include_once('messg.php'); 
      $funObj = new dbFunction(); 
      $funObj1 = new general();  
+     $funObj2 = new messages();
     if(!empty($_POST['register'])){  
         $username = $_POST['username']; 
         $phonenum = $_POST['number']; 
@@ -20,29 +21,27 @@
                     if($passCheck){
                 $register = $funObj->UserRegister($username, $emailid, $password, $phonenum);  
                 if($register){  
-                    $reg_success = "Registration Successfully done!!!"; 
+                    echo $funObj2->success('Registration Successfully done!!!');
                 }else{  
                     $reg_not_success = "Registration Not Successful!!!"; 
-                     }
+                    }
                 } else{
-                    $pass_length = "Password contain one special character,one capital letter and not less than 5!!!";
+                     echo $funObj2->error('Password contain one special character,one capital letter and not less than 5!!!');
                 } 
              }else{
-                    $valid_phn_num = "Enter Valid Phone Num!!!";
+                  echo $funObj2->error('Enter Valid Phone Num!!!');
                   }
             } else {  
-                     $email_exist = "Email Already Exist!!!";  
+                     echo $funObj2->error('Email Already Exist!!!');  
                     }  
         } else {  
-                $pass_match = "Password Not Match!!!";          
+                echo $funObj2->error('Password Not Match!!!');          
                }  
     } else {
-        echo "Please enter all the fields carefully!!!";
+        echo $funObj2->warning('Please enter all the fields carefully!!!');
     }
 }
 ?>
-<!-- this include the alert message shown on the registration page  -->
-<?Php include 'alert.php';?>
 
 <!DOCTYPE html>
 <html lang="en" class="no-js">
