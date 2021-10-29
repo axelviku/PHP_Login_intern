@@ -1,25 +1,20 @@
 <?php
+include_once('dbFunction.php');
 include_once('messg.php');
- include_once('dbFunction.php');
 $funObj = new dbFunction();  
 $funObj1 = new general();
 $funObj2 = new messages();
 if(!empty($_POST['login'])){  
     $emailid = $_POST['emailid'];  
     $password = $_POST['password'];  
-    $empty = $funObj1->emptyField($username=null,$emailid, $password, $phonenum=null);
-    if($empty){
     $user = $funObj->Login($emailid, $password);  
     if ($user) {  
         // Registration Success  
        header("location:home.php");  
     } else {  
         // Registration Failed  
-        echo $funObj1->error('Your EmailId / Password Not Match!!!');
+        echo $funObj2->error('Your EmailId / Password Not Match!!!');
     } 
-  } else {
-    echo $funObj2->warning('Please enter all the fields carefully!!!');
-}
 }
 ?>
 
