@@ -52,7 +52,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="stylereg.css">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="stylereg.css">
 
 </head>
 
@@ -69,25 +70,25 @@
                         <form name="login" method="post" action="">
                             <div class="form-group">
                                 <label for="usernamesignup" data-icon="u">Your username</label>
-                                <input class="form-control" id="usernamesignup" name="username" 
-                                  type="text" placeholder="Viku123" />
+                                <input class="form-control" id="usernamesignup" name="username" type="text"
+                                    placeholder="Viku123" />
                             </div>
                             <div class="form-group">
                                 <label for="emailsignup" data-icon="e"> Your email</label>
-                                <input class="form-control" id="emailsignup" name="emailid" 
-                                    type="email" placeholder="Abc@gmail.com" />
+                                <input class="form-control" id="emailsignup" name="emailid" type="email"
+                                    placeholder="Abc@gmail.com" />
                                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="PhoneNum" data-icon="p">Phone Number</label>
-                                <input class="form-control" id="phonenum" name="number" 
-                                    type="number" placeholder="eg.9973462210" />
+                                <input class="form-control" id="phonenum" name="number" type="number"
+                                    placeholder="eg.9973462210" />
                             </div>
                             <div class="form-group">
                                 <label for="passwordsignup" data-icon="p">Your password </label>
-                                <input class="form-control" id="passwordsignup" name="password" 
-                                    type="password" placeholder="eg. Abc@1" />
+                                <input class="form-control" id="passwordsignup" name="password" type="password"
+                                    placeholder="eg. Abc@1" />
                             </div>
                             <div class="form-group">
                                 <label for="passwordsignup_confirm" data-icon="p">Please confirm your password </label>
