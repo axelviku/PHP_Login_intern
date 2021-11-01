@@ -1,6 +1,7 @@
 <?php  
     include_once('dbFunction.php');  
      include_once('messg.php'); 
+     include_once('general.php');
      $funObj = new dbFunction(); 
      $funObj1 = new general();  
      $funObj2 = new messages();
@@ -104,7 +105,6 @@
                             </p>
                         </form>
                     </div>
-
                 </div>
             </div>
         </section>

@@ -2,7 +2,7 @@
 include_once('dbFunction.php');
 include_once('messg.php');
 $funObj = new dbFunction();  
-$funObj1 = new general();
+//$funObj1 = new general();
 $funObj2 = new messages();
 if(!empty($_POST['login'])){  
     $emailid = $_POST['emailid'];  

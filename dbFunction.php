@@ -7,14 +7,12 @@ session_start();
             include 'config.php';    
            // Try connecting to the Database
            $this->conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
-         
         }  
               
         public function UserRegister($username, $emailid, $password, $phonenum){  
                 $password = md5($password);  
                 $qr = mysqli_query($this->conn,"INSERT INTO users(username, emailid, password, number) values('".$username."','".$emailid."','".$password."','".$phonenum."')") or die(mysql_error());  
-                return $qr;  
-               
+                return $qr;   
         }  
         public function validating($phonenum){
                     $valid_number = filter_var($phonenum, FILTER_SANITIZE_NUMBER_INT);
@@ -45,7 +43,6 @@ session_start();
             $res = mysqli_query($this->conn,"SELECT * FROM users WHERE emailid = '".$emailid."' AND password = '".md5($password)."'");  
             $user_data = mysqli_fetch_array($res);  
             $no_rows = mysqli_num_rows($res);  
-              
             if ($no_rows == 1)   
             {  
                 $_SESSION['login'] = true;  
@@ -69,16 +66,4 @@ session_start();
             }  
         }  
     }
-    
-    class general{
-        public function emptyField($username,$password,$emailid,$phonenum){
-            if(strlen(!$username || !$emailid || !$password || !$phonenum) == 0){
-                return true;
-            }else{
-                return false;
-            }
-
-        }
-    }
-
 ?>  

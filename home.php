@@ -11,9 +11,8 @@
         header("Location:login.php");  
     }  
 ?>
-<!DOCTYPE html>
+<!DOCTYPE html>             
 <html lang="en" class="no-js">
-
 <head>
     <meta charset="UTF-8" />
     <title>Home!</title>
