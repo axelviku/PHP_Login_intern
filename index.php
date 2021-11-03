@@ -2,6 +2,7 @@
     include_once('dbFunction.php');  
      include_once('messg.php'); 
      include_once('general.php');
+     include_once('displaymessg.php');
      $funObj = new dbFunction(); 
      $funObj1 = new general();  
      $funObj2 = new messages();
@@ -22,24 +23,24 @@
                     if($passCheck){
                 $register = $funObj->UserRegister($username, $emailid, $password, $phonenum);  
                 if($register){  
-                    echo $funObj2->success('Registration Successfully done!!!');
+                    echo $success1;
                 }else{  
-                    $reg_not_success = "Registration Not Successful!!!"; 
+                     echo $error6; 
                     }
                 } else{
-                     echo $funObj2->error('Password contain one special character,one capital letter and not less than 5!!!');
+                     echo $error5;
                 } 
              }else{
-                  echo $funObj2->error('Enter Valid Phone Num!!!');
+                  echo $error4;
                   }
             } else {  
-                     echo $funObj2->error('This email is already taken!!!');  
+                     echo $error3;  
                     }  
         } else {  
-                echo $funObj2->error('Password Not Match!!!');          
+                echo $error2;          
                }  
     } else {
-        echo $funObj2->warning('Please enter all the fields carefully!!!');
+      echo $error1;
     }
 }
 ?>

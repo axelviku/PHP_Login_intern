@@ -2,6 +2,7 @@
 include_once('dbFunction.php');
 include_once('messg.php');
 include_once('general.php');
+include_once('displaymessg.php');
 $funObj = new dbFunction();  
 $funObj1 = new general();
 $funObj2 = new messages();
@@ -16,7 +17,7 @@ if(!empty($_POST['login'])){
        header("location:home.php");  
     } else {  
         // Registration Failed  
-        echo $funObj2->error('Your EmailId / Password Not Match!!!');
+        echo $error21;
     } 
  } else {
      echo $funObj2->warning('Please enter all the fields Carefully!!!');
